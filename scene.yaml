@@ -65,27 +65,7 @@ layers:
                     outline:
                         color: [0,0,0,0.5]
                         width: 1px
-                    _text:
-                        # optional: true
-                        collide: false
-                        text_source: points
-                        # text_source: |
-                        #     function(){
-                        #         if (feature.points < 2){return '😱'}
-                        #         if (feature.points < 3){return '😳'}
-                        #         if (feature.points < 4){return '😬'}
-                        #         if (feature.points < 5){return '🤔'}
-                        #         if (feature.points < 6){return '🙂'}
-                        #         if (feature.points < 7){return '😃'}
-                        #         if (feature.points < 8){return '😍'}
-                        #         if (feature.points < 9){return '🤩'}
-                        #         }
-                        font:
-                            fill: black
-                            size: 10px
-                            stroke:
-                                color: white
-                                width: 2px
+
                         
         emoji:
             # enabled: false
