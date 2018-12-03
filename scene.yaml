@@ -91,6 +91,7 @@ layers:
             # enabled: false
             draw:
                 _text:
+                    interactive: true
                     optional: false
                     collide: false
                     priority: 1
