@@ -30,7 +30,7 @@ styles:
     _text:
         base: text
         blend: overlay
-        blend_order: 21
+        blend_order: 100
 
 
 layers:
@@ -60,13 +60,13 @@ layers:
                             if (points < 7){return [0,0,1,0.5]}
                             else {return [0,1,0,0.5]}
                             }
-                    # color: [1,1,1,0.0]
+                    # color: [1,1,1,0.5]
                     size: 12px
                     outline:
-                        color: [0,0,0,0.4]
+                        color: [0,0,0,0.5]
                         width: 1px
-                    text:
-                        optional: true
+                    _text:
+                        # optional: true
                         collide: false
                         text_source: points
                         # text_source: |
@@ -81,11 +81,11 @@ layers:
                         #         if (feature.points < 9){return '🤩'}
                         #         }
                         font:
-                            fill: red
-                            size: 12px
+                            fill: black
+                            size: 10px
                             stroke:
                                 color: white
-                                width: 4px
+                                width: 2px
                         
         emoji:
             # enabled: false
@@ -93,8 +93,7 @@ layers:
                 _text:
                     optional: false
                     collide: false
-                    # priority: rank
-                    repeat_distance: 0
+                    priority: 1
                     # text_source: points
                     text_source: |
                         function(){
@@ -104,7 +103,7 @@ layers:
                             if (feature.points < 5){return '🤔'}
                             if (feature.points < 6){return '🙂'}
                             if (feature.points < 7){return '😃'}
-                            if (feature.points < 7.5){return '😍'}
+                            if (feature.points < 8){return '😍'}
                             if (feature.points < 9){return '🤩'}
                             }
                     # text_source: |
@@ -114,9 +113,7 @@ layers:
                     #         }
                     font:
                         fill: black
-                        size: 20px
-                        
+                        size: 24px
                         stroke:
                             color: white
                             width: 2px
-
