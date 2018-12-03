@@ -30,7 +30,7 @@ styles:
     _text:
         base: text
         blend: overlay
-        blend_order: 100
+        blend_order: 21
 
 
 layers:
@@ -60,12 +60,32 @@ layers:
                             if (points < 7){return [0,0,1,0.5]}
                             else {return [0,1,0,0.5]}
                             }
-                    # color: [1,1,1,0.5]
+                    # color: [1,1,1,0.0]
                     size: 12px
                     outline:
-                        color: [0,0,0,0.5]
+                        color: [0,0,0,0.4]
                         width: 1px
-
+                    text:
+                        optional: true
+                        collide: false
+                        text_source: points
+                        # text_source: |
+                        #     function(){
+                        #         if (feature.points < 2){return '😱'}
+                        #         if (feature.points < 3){return '😳'}
+                        #         if (feature.points < 4){return '😬'}
+                        #         if (feature.points < 5){return '🤔'}
+                        #         if (feature.points < 6){return '🙂'}
+                        #         if (feature.points < 7){return '😃'}
+                        #         if (feature.points < 8){return '😍'}
+                        #         if (feature.points < 9){return '🤩'}
+                        #         }
+                        font:
+                            fill: red
+                            size: 12px
+                            stroke:
+                                color: white
+                                width: 4px
                         
         emoji:
             # enabled: false
@@ -73,7 +93,8 @@ layers:
                 _text:
                     optional: false
                     collide: false
-                    priority: 1
+                    # priority: rank
+                    repeat_distance: 0
                     # text_source: points
                     text_source: |
                         function(){
@@ -83,7 +104,7 @@ layers:
                             if (feature.points < 5){return '🤔'}
                             if (feature.points < 6){return '🙂'}
                             if (feature.points < 7){return '😃'}
-                            if (feature.points < 8){return '😍'}
+                            if (feature.points < 7.5){return '😍'}
                             if (feature.points < 9){return '🤩'}
                             }
                     # text_source: |
@@ -93,7 +114,9 @@ layers:
                     #         }
                     font:
                         fill: black
-                        size: 24px
+                        size: 20px
+                        
                         stroke:
                             color: white
                             width: 2px
+
