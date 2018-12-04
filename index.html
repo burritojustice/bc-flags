@@ -1,70 +1,69 @@
 <!doctype html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Municipal Flags of British Columbia, Ranked</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
-    <style>
-        html, body {
-            margin: 0;
-            border: 0;
-            font-family: 'Fira Sans', sans-serif;
-            font-size: 14px;
-        }
-
-        #map {
-            height: 100%;
-            width: 100%;
-	    position: absolute; 
-
-        }
-
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Municipal Flags of British Columbia, Ranked</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
+	<style>		html, body {
+		    margin: 0;
+		    border: 0;
+		    font-family: 'Fira Sans', sans-serif;
+		    font-size: 14px;
+		}
+		
+		#map {
+		    height: 100%;
+		    width: 100%;
+			    position: absolute; 
+		
+		}
 	</style>
-    
-  </head>
-  <body>
-    <div id="map"></div>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
-    <!-- Main tangram library -->
-    <script src="https://unpkg.com/tangram/dist/tangram.min.js"></script>
-    <script src="leaflet-hash.js"></script>
-    <script>
-        var map = L.map('map', {boxZoom: false});
-	var hash = new L.Hash(map);
-	var popup = L.popup();
-        var layer = Tangram.leafletLayer({
-            scene: 'scene.yaml',
-            attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>| &copy; OSM contributors | <a href="https://nextzen.org/" target="_blank">Nextzen</a>',
-            events: {
-                hover: function(selection) {
-			if (selection.feature) {
-				var properties = (selection.feature.properties)
-				showPopup(selection.leaflet_event.latlng, properties);
-			} else {
-				map.closePopup();
-			}
-                }
+</head>
+<body>
+<div id="map">
+</div>
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js">
+</script>
+<!-- Main tangram library -->
+<script src="https://unpkg.com/tangram/dist/tangram.min.js">
+</script>
+<script src="leaflet-hash.js">
+</script>
+<script>
+  var map = L.map('map', {boxZoom: false});
+    var hash = new L.Hash(map);
+    var popup = L.popup();
+    var layer = Tangram.leafletLayer({
+        scene: 'scene.yaml',
+        attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>| &copy; OSM contributors | <a href="https://nextzen.org/" target="_blank">Nextzen</a>',
+        events: {
+          hover: function(selection) {
+          if (selection.feature) {
+            var properties = (selection.feature.properties)
+            showPopup(selection.leaflet_event.latlng, properties);
+          } else {
+            map.closePopup();
             }
-        });   
-        
-        layer.addTo(map);
-	map.setView([48.4349, -123.4470], 12.6112);
-        map.zoomControl.setPosition('bottomright')
-    
-    
-        function showPopup(latlng, properties) {
-            popup
-                .setLatLng(latlng)
-                .setContent('<p><strong>' + properties.municipality + '</strong><br>' + properties.points + ' points, ' + properties.rank + 'place<br><br>' + properties.notes + '</p>')
-                .openOn(map);
+          }
         }
-    
-    
-    </script>
-
-
-
-
-  </body>
+      });   
+	
+	layer.addTo(map);
+	map.setView([48.4349, -123.4470], 12.6112);
+	map.zoomControl.setPosition('bottomright')
+	    
+	    
+	function showPopup(latlng, properties) {
+	    var notes = properties.notes.replace("- ","<li>")
+	    
+		
+	    popup
+	        .setLatLng(latlng)
+	        .setContent('<p><strong>' + properties.municipality + '</strong><br>#' properties.rank +', +  properties.points + ' points, ' +  + '<br><br>' + notes + '</p>')
+	        .openOn(map);
+	}
+</script>
+</body>
+</html>
