@@ -60,9 +60,9 @@
 	    note = notes.replace(/'-'/g,"<li>")
 	    notes = '<ul>' + notes + '</ul>'
             var url = properties.url
+	    url = '<img src = ' + url + ' "width=150px" >'
 
 	    console.log(notes,url)
-	    url = '<img src = ' + url + '+ "width=150px" >'
 	    
 	    popup
 	        .setLatLng(latlng)
