@@ -109,8 +109,8 @@ layers:
                             if (feature.points < 5){return '🤔'}
                             if (feature.points < 6){return '🙂'}
                             if (feature.points < 7){return '😃'}
-                            if (feature.points < 7.5){return '😍'}
-                            if (feature.points < 9){return '🤩'}
+                            if (feature.points < 7.7){return '😍'}
+                            if (feature.points < 9){return '😎'}
                             }
                     # text_source: |
                     #     function(){
