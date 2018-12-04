@@ -57,11 +57,12 @@
 	    
 	function showPopup(latlng, properties) {
 	    var notes = properties.notes
-	    note = notes.replace(/-/g,"<li>")
+	    note = notes.replace(/'-'/g,"<li>")
 	    notes = '<ul>' + notes + '</ul>'
-	    console.log(notes)
-	    var url = properties.url
-	    url = '<img src = ' + url + '> + width="100px"'
+            var url = properties.url
+
+	    console.log(notes,url)
+	    url = '<img src = ' + url + '+ "width=150px" >'
 	    
 	    popup
 	        .setLatLng(latlng)
