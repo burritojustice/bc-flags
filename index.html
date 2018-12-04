@@ -57,25 +57,25 @@
 	    
 	function showPopup(latlng, properties) {
 	    var notes = properties.notes
-	    note = notes.replace(/'\-/g,"<li>")
+	    note = notes.replace(/\-/g,"<li>")
 	    notes = '<ul>' + notes + '</ul>'
             var url = properties.url
-	    url = '<img src = ' + url + ' "width=150" >'
+	    url = '<img src = ' + url + ' width=100 >'
 
 	    console.log(notes,url)
 	    
 	    popup
 	        .setLatLng(latlng)
-	        .setContent('<p><strong>' +
-			    properties.municipality +
-			    '</strong><br>#' +
-			    properties.rank +
-			    ',' +
-			    properties.points +
-			    ' points<br><br>' +
-			    notes +
-			    url +
-			    '</p>')
+	        .setContent('<p><strong>' 
+			    + properties.municipality 
+			    + '</strong><br>#' 
+			    + properties.rank 
+			    + ', ' 
+			    + properties.points 
+			    + ' points' 
+			    + notes 
+			    + url 
+			    + '</p>')
 	        .openOn(map);
 		
 	}
