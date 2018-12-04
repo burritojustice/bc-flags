@@ -39,7 +39,7 @@
         scene: 'scene.yaml',
         attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>| &copy; OSM contributors | <a href="https://nextzen.org/" target="_blank">Nextzen</a>',
         events: {
-          hover: function(selection) {
+          click: function(selection) {
           if (selection.feature) {
             var properties = (selection.feature.properties)
             showPopup(selection.leaflet_event.latlng, properties);
