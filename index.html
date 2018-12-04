@@ -57,7 +57,7 @@
 	    
 	function showPopup(latlng, properties) {
 	    var notes = properties.notes
-	    note = notes.replace(/\-/g,"<li>")
+	    notes = notes.replace(/-/g,"<li>")
 	    notes = '<ul>' + notes + '</ul>'
             var url = properties.url
 	    url = '<img src = ' + url + ' width=100% >'
