@@ -1,6 +1,6 @@
 # Map of Flags of Municipalities of British Columboa
 
-CBC Vancouver's Justin McElroy / @j_mcelroy ranked every BC municipality's flag in this [epic Twitter thread](https://twitter.com/j_mcelroy/status/1066885174112047104). 
+CBC Vancouver's Justin McElroy / @j_mcelroy ranked every single municipal flag in British Columbia in this [epic Twitter thread](https://twitter.com/j_mcelroy/status/1066885174112047104). 
 
 Thread reader version here:
 https://threadreaderapp.com/thread/1066885174112047104.html
