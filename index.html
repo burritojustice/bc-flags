@@ -32,17 +32,21 @@
             z-index: 1000;
             opacity: 0.8;
             background-color: white;
-            font: 16px 'Fira Sans', sans-serif;;
+            font: 18px 'Fira Sans', sans-serif;
             text-shadow: 2px 2px #FFFFFF;
             display: table;
             padding: 10px;
             border-radius: 15px; 
         }
         #text{
-            display: table-cell;
+/*             display: table-cell; */
             vertical-align: middle;
             text-align: center;
         }
+        #small{
+            font-size:12px;
+        }
+        
 	</style>
 </head>
 <body>
@@ -50,11 +54,11 @@
 </div>
 <div id="label" style="text-align: center; color: red">
 	<p id="text">A MAP OF THE MUNICIPAL FLAGS OF BRITISH COLUMBIA 
-	<br>as ranked by @j_mcelroy 
-	<br><br>BUT WITH EMOJI
+	<br>as ranked by <a href='https://threadreaderapp.com/thread/1066885174112047104.html' target = '_blank'>@j_mcelroy</a> 
+	<br><br><i>BUT WITH EMOJI</i>
 	<br> 😱 😳 😬 🤔 🙂 😃 😍 😎 
-	<br><br> click or hover to see the flag and notes
-	<br>Flags via FOTW, made with Tangram, Nextzen, and HERE XYZ
+	<p id='small'> click or hover to see the flag (via <a href="https://fotw.info/flags/ca-bc-.html" target = '_blank'>FOTW</a>) and notes<br>
+	<a href="https://twitter.com/burritojustice" target = '_blank'>@burritojustice</a> made this map using <a href="https://github.com/tangrams/tangram" target = '_blank'>Tangram</a> + <a href="https://www.nextzen.org/" target = '_blank'>Nextzen</a> + <a href="https://pelias.io/" target="_blank">Pelias</a> + <a href="http://explore.xyz.here.com" target = '_blank'>HERE XYZ</a>
 	</p>
 </div>
 <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js">
@@ -70,7 +74,7 @@
     var popup = L.popup();
     var layer = Tangram.leafletLayer({
         scene: 'scene.yaml',
-        attribution: '<a href="https://github.com/tangrams/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a> |  <a href="https://explore.xyz.here.com/">HERE XYZ</a>',
+        attribution: '<a href="https://github.com/tangrams/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="openaddresses.io">OpenAddresses</a> | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a> |  <a href="https://explore.xyz.here.com/">HERE XYZ</a>',
         events: {
           click: function(selection) {
             if (selection.feature) {
