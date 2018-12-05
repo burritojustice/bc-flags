@@ -35,7 +35,7 @@
             font: 16px 'Fira Sans', sans-serif;;
             text-shadow: 2px 2px #FFFFFF;
             display: table;
-            padding: 30px;
+/*             padding: 30px; */
             border-radius: 15px; 
         }
         #text{
@@ -52,7 +52,7 @@
 	<p id="text">A MAP OF THE MUNICIPAL FLAGS OF BRITISH COLUMBIA 
 	<br>as ranked by @j_mcelroy 
 	<br><br>BUT WITH EMOJI
-	<br> worst -> 😱 😳 😬 🤔 🙂 😃 😍 😎 <- best
+	<br> 😱 😳 😬 🤔 🙂 😃 😍 😎 
 	<br><br> click or hover to see the flag and notes
 	<br>Flags via FOTW, made with Tangram, Nextzen, and HERE XYZ
 	</p>
@@ -70,7 +70,7 @@
     var popup = L.popup();
     var layer = Tangram.leafletLayer({
         scene: 'scene.yaml',
-        attribution: '<a href="https://github.com/tangrams/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a> | HERE <a href="https://explore.xyz.here.com/">XYZ</a>',
+        attribution: '<a href="https://github.com/tangrams/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a> |  <a href="https://explore.xyz.here.com/">HERE XYZ</a>',
         events: {
           click: function(selection) {
             if (selection.feature) {
