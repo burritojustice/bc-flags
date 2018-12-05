@@ -7,7 +7,9 @@ https://threadreaderapp.com/thread/1066885174112047104.html
 
 I [turned it into a map](https://burritojustice.github.io/boots-to-books), and converted the rankings into emoji. Because that's what you do.
 
-worst -> 😱 😳 😬 🤔 🙂 😃 😍 😎 <- best
+|1|2|3|4|5|6|7|7.7|
+|---|---|---|---|---|---|---|---|
+| 😱| 😳| 😬| 🤔| 🙂| 😃| 😍| 😎 |
 
 ![iamge of map](https://github.com/burritojustice/bc-flags/blob/master/bc_flag_emoji_ranking_map.png)
 
