@@ -5,7 +5,7 @@ CBC Vancouver's Justin McElroy / @j_mcelroy ranked every BC municipality's flag 
 Thread reader version here:
 https://threadreaderapp.com/thread/1066885174112047104.html
 
-I [turned it into a map](https://burritojustice.github.io/boots-to-books), and converted the rankings into emoji. Because that's what you do.
+I [turned it into a zoomable slippy map](https://burritojustice.github.io/bc-flags), and converted the rankings into emoji. Because that's what you do.
 
 |1|2|3|4|5|6|7|7.7|
 |---|---|---|---|---|---|---|---|
