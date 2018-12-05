@@ -21,5 +21,5 @@ I [turned it into a zoomable slippy map](https://burritojustice.github.io/bc-fla
 - I geocoded the CSV using [Pelias](http://pelias.io)
 - I uploaded the CSV to [HERE XYZ](https://explore.xyz.here.com/)
 - I used the table editor in [XYZ Studio](https://xyz.here.com/studio/) to fix a bunch of data I broke because I am bad at rege (I also used Studio to nudge some of the points to better locations because centroids of large municipalities are often not quite where the town is). 
-- I made the map in [Tangram Play](https://tangram.city/play/), pulling the points in from the HERE XYZ API and converted the scores to emoji. I displayed with [tangram.js](https://github.com/tangrams/tangram) top of a Refill basemap from [Nextzen](https://nextzen.org/).
+- I made the map in [Tangram Play](https://tangram.city/play/?scene=https://raw.githubusercontent.com/burritojustice/bc-flags/master/scene.yaml#10.9898/48.5373/-123.4756), pulling the points in from the HERE XYZ API and using conditional formatting to convert scores to emoji. I displayed the map with [tangram.js](https://github.com/tangrams/tangram) top of a Refill basemap from [Nextzen](https://nextzen.org/).
 
