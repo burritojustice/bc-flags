@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Municipal Flags of British Columbia, Ranked</title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
+	
 	<style>		html, body {
 		    margin: 0;
 		    border: 0;
@@ -22,16 +23,16 @@
 
         #label {
             text-align: center;
-            top: 30%;
-            height: 30%;
-            width: 30%;
-            left: 35%;
+            top: 0%;
+            height: 20%;
+            width: 40%;
+            left: 30%;
             position: absolute;
             margin: 0 auto;
             z-index: 1000;
             opacity: 0.7;
             background-color: white;
-            font: 18px 'Fira Sans', sans-serif;;
+            font: 16px 'Fira Sans', sans-serif;;
             text-shadow: 2px 2px #FFFFFF;
             display: table;
             padding: 30px;
@@ -48,13 +49,12 @@
 <div id="map">
 </div>
 <div id="label" style="text-align: center; color: red">
-	<p id="text">A map of the municipal flags</a> 
-	<br><br>of British Columbia<br><br>as ranked by <a href="https://threadreaderapp.com/thread/1066885174112047104.html" target="_blank" >@j_mcelroy's</a> 
+	<p id="text">A MAP OF THE MUNICIPAL FLAGS OF BRITISH COLUMBIA 
+	<br><br>as ranked by @j_mcelroy 
 	<br><br>BUT WITH EMOJI
-	<br><br> worst 😱 😳 😬 🤔 🙂 😃 😍 😎 best
+	<br> worst -> 😱 😳 😬 🤔 🙂 😃 😍 😎 <- best
 	<br><br> click or hover to see the flag and notes
-	<br><br>Flags via <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a>
-	<br><br>Made with Tangram, Nextzen, and HERE XYZ
+	<br>Flags via FOTW, made with Tangram, Nextzen, and HERE XYZ
 	</p>
 </div>
 <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js">
@@ -70,7 +70,7 @@
     var popup = L.popup();
     var layer = Tangram.leafletLayer({
         scene: 'scene.yaml',
-        attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy/CBC</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a>',
+        attribution: '<a href="https://github.com/tangrams/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy/CBC</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a> | HERE <a href="https://explore.xyz.here.com/">XYZ</a>',
         events: {
           click: function(selection) {
             if (selection.feature) {
@@ -126,6 +126,14 @@
         map.on('move', function(e) {
             document.getElementById("label").style.visibility = "hidden"
         })
+        map.on('click', function(e) {
+            document.getElementById("label").style.visibility = "hidden"
+        })
+        map.on('mouseover', function(e) {
+            document.getElementById("label").style.visibility = "hidden"
+        })
+        
+        
 	
 </script>
 </body>
