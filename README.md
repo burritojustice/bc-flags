@@ -13,7 +13,9 @@ I [turned it into a zoomable slippy map](https://burritojustice.github.io/bc-fla
 
 ![image of map](https://github.com/burritojustice/bc-flags/blob/master/bc_flag_emoji_ranking_map.png)
 
-(sorry if your OS doesn't have all these)
+Sorry if your OS doesn't have all these emoji, this is a cutting-edge map. 
+
+The map works on mobile, just tap, but is more fun on a bigger screen with hover. 
 
 # How did I make this map?
 
