@@ -9,7 +9,9 @@ I [turned it into a map](https://burritojustice.github.io/boots-to-books), and c
 
 worst -> 😱 😳 😬 🤔 🙂 😃 😍 😎 <- best
 
+![iamge of map](https://github.com/burritojustice/bc-flags/blob/master/bc_flag_emoji_ranking_map.png)
 
+(sorry if your OS doesn't have all these)
 
 # How did I make this map?
 
