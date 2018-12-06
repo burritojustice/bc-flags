@@ -7,13 +7,14 @@ https://threadreaderapp.com/thread/1066885174112047104.html
 
 I [turned it into a zoomable slippy map](https://burritojustice.github.io/bc-flags), and converted the rankings into emoji. Why? Because that's just what how you make maps in 2018.
 
-Points to Emoji table:
+![image of map](https://github.com/burritojustice/bc-flags/blob/master/bc_flag_emoji_ranking_map.png)
+
+mapmoji table:
 
 |1|2|3|4|5|6|7|7.8|
 |---|---|---|---|---|---|---|---|
 | 😱| 😳| 😬| 🤔| 🙂| 😃| 😍| 😎 |
 
-![image of map](https://github.com/burritojustice/bc-flags/blob/master/bc_flag_emoji_ranking_map.png)
 
 (Sorry if your OS doesn't have all these emoji, this map _cutting-edge_.)
 
