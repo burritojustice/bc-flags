@@ -120,12 +120,12 @@
 	    
 	    popup
 	        .setLatLng(latlng)
-	        .setContent('<p>' 
-			    + '<emoji style="font-size: 40px;vertical-align: middle;">' 
+	        .setContent('<p><table><tr>' 
+			    + '<td><emoji style="font-size: 40px;vertical-align: middle;">' 
 			    + emoji 
-			    + '</emoji> <b><city style="font-size: 25px;vertical-align: middle;">'
+			    + '</emoji></td><td><b><city style="font-size: 25px;vertical-align: middle;">'
 			    + properties.municipality  
-			    + '</city></b><br>'
+			    + '</city></b></td></tr></table>'
 			    + '#' 
 			    + properties.rank 
 			    + ', ' 
