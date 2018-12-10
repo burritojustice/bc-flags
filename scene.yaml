@@ -8,7 +8,7 @@ import:
     - https://www.nextzen.org/carto/refill-style/refill-style.zip
     # - https://www.nextzen.org/carto/refill-style/themes/color-gray-gold.zip
     # - https://www.nextzen.org/carto/refill-style/themes/color-inverted.zip    
-    # - https://s3.amazonaws.com/xyz-demo/data/demo.yaml
+    - https://s3.amazonaws.com/xyz-demo/data/demo.yaml
     # - https://www.nextzen.org/carto/refill-style/11/themes/label-4.zip
     # - https://www.nextzen.org/carto/refill-style/themes/terrain-shading.zip
     # - https://www.nextzen.org/carto/refill-style/11/themes/terrain-shading-dark.zip
