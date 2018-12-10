@@ -106,7 +106,16 @@
 	    notes = '<ul>' + notes + '</ul>'
             var url = properties.url
 	    url = '<img src = ' + url + ' width=100% >'
-
+	    var points = properties.points
+	    var emoji
+	    if (points < 2){emoji = ' 😱'} 
+	    else if (points < 3){emoji = ' 😳'}
+	    else if (points < 4){emoji = ' 😬'}
+	    else if (points < 5){emoji = ' 🤔'}
+	    else if (points < 6){emoji = ' 🙂'}
+	    else if (points < 7){emoji = ' 😃'}
+	    else if (points < 7.89){emoji = ' 😍'}
+	    else if (points < 9){emoji = ' 😎'}
 	    console.log(notes,url)
 	    
 	    popup
@@ -117,7 +126,8 @@
 			    + properties.rank 
 			    + ', ' 
 			    + properties.points 
-			    + ' points<br><br>' 
+			    + ' points' + ' = ' 
+			    + emoji + '<br><br>
 			    + url
 			    + notes 
 			    + '</p>')
