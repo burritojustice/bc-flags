@@ -16,9 +16,9 @@ import:
 
         
 sources:
-    mapzen:
-        type: MVT
-        url: https://xyz.api.here.com/tiles/osmbase/256/all/{z}/{x}/{y}.mvt
+#     mapzen:
+#         type: MVT
+#         url: https://xyz.api.here.com/tiles/osmbase/256/all/{z}/{x}/{y}.mvt
     _xyzspace:
         url: global.bbox_studio
         # url: https://xyz.api.here.com/hub/spaces/6DE0QMI0/bbox?west=-139.061110259&south=48.22455359&east=-114.05382241&north=60.0020482135
