@@ -20,7 +20,13 @@ sources:
         # url: https://xyz.api.here.com/hub/spaces/niaLjvic/tile/web/{z}_{x}_{y}
         type: GeoJSON
         url_params: 
-            access_token: AeE9KOkDbjkbmUv8bpM8ZC4
+            access_token: AeE9KOkDbjkbmUv8bpM8ZC4      
+    _bc:
+        url: https://xyz.api.here.com/hub/spaces/LdmvFlzZ/search
+        type: GeoJSON
+        url_params:
+            access_token: AVoxWfIDYgZOr4zOaUV3urg
+            tags: british_columbia
 styles:
     _points:
         base: points
@@ -87,5 +93,15 @@ layers:
                         fill: black
                         # size: 20px
                         size: global.point_size
-
+    _bc:
+        data: {source: _bc}
+        filter: {$zoom: {min: 8}}
+        country:
+            draw:
+                country-outerline:
+                    style: lines
+                    order: 100
+                    # order: function() { return (feature.sort_rank -1); }
+                    color: global.light_color
+                    width: [[0, 0px], [4, 2px], [8, 5px], [14, 7px], [17, 14m]]
 
