@@ -3,26 +3,24 @@ global:
     bbox_studio:
         https://xyz.api.here.com/hub/spaces/niaLjvic/bbox?west=-139.061110259&south=48.22455359&east=-114.05382241&north=60.0020482135
     point_size: [[5,20px],[10,30px],[20,200px]]
+
 import:
     - https://www.nextzen.org/carto/refill-style/refill-style.zip
     - https://www.nextzen.org/carto/refill-style/themes/color-gray-gold.zip
     - https://s3.amazonaws.com/xyz-demo/data/demo.yaml
-    # - https://www.nextzen.org/carto/refill-style/themes/terrain-shading.zip
-    - https://www.nextzen.org/carto/refill-style/themes/terrain-shading-dark.zip
+    - https://www.nextzen.org/carto/refill-style/themes/terrain-shading.zip
+    # - https://www.nextzen.org/carto/refill-style/themes/terrain-shading-dark.zip
     
-
-        
 sources:
     # mapzen:
     #     type: MVT
     #     url: https://xyz.api.here.com/tiles/osmbase/256/all/{z}/{x}/{y}.mvt
     _xyzspace:
         url: global.bbox_studio
-        # url: https://xyz.api.here.com/hub/spaces/6DE0QMI0/tile/web/{z}_{x}_{y}
+        # url: https://xyz.api.here.com/hub/spaces/niaLjvic/tile/web/{z}_{x}_{y}
         type: GeoJSON
         url_params: 
             access_token: AeE9KOkDbjkbmUv8bpM8ZC4
-
 styles:
     _points:
         base: points
@@ -50,11 +48,7 @@ layers:
                     collide: false
                     color: [1,1,1,0.0]
                     size: global.point_size
-                    # outline:
-                    #     color: [0,0,0,0.4]
-                    #     width: 1px
                     text:
-                        # optional: true
                         collide: false
                         # text_source: points
                         text_source: |
@@ -65,7 +59,7 @@ layers:
                                 }
                             
                         font:
-                            fill: darkorange
+                            fill: lightblue
                             size: 12px
                             stroke:
                                 color: black
