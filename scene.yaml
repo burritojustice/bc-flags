@@ -53,7 +53,7 @@ layers:
                         # text_source: points
                         text_source: |
                             function(){
-                                if ($zoom > 12){
+                                if ($zoom > 11){
                                     return feature.municipality + "\n" + feature.points 
                                     } else {return feature.points}
                                 }
