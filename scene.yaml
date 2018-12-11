@@ -20,10 +20,9 @@ sources:
         url: global.bbox_studio
         # url: https://xyz.api.here.com/hub/spaces/6DE0QMI0/tile/web/{z}_{x}_{y}
         type: GeoJSON
-
-
         url_params: 
             access_token: AeE9KOkDbjkbmUv8bpM8ZC4
+
 styles:
     _points:
         base: points
@@ -33,7 +32,6 @@ styles:
         base: text
         blend: overlay
         blend_order: 21
-
 
 layers:
     _xyz_dots:
