@@ -7,7 +7,7 @@ https://threadreaderapp.com/thread/1066885174112047104.html
 
 I [turned it into a zoomable slippy map](https://burritojustice.github.io/bc-flags), and converted the rankings into emoji. Why? Because that's just what how you make maps in 2018.
 
-![image of map](https://github.com/burritojustice/bc-flags/blob/master/bc_flag_emoji_ranking_map.png)
+![image of map](bc_flag_grey_gold.png)
 
 mapmoji table:
 
