@@ -14,12 +14,16 @@
 		    font-size: 14px;
 		}
 		
-		#map {
-		    height: 100%;
-		    width: 100%;
-			    position: absolute; 
-		
-		}
+	#map {
+	    height: 100%;
+	    width: 100%;
+		    position: absolute; 
+
+	}
+	#flag {
+		height: 400;
+		width: 100%;
+	}
 
         #label {
             text-align: center;
@@ -106,6 +110,7 @@
 	    notes = '<ul>' + notes + '</ul>'
             var url = properties.url
 	    url = '<img src = ' + url + ' width=100% >'
+	    var image_div = '<div height = 300></div>
 	    var points = properties.points
 	    var emoji
 	    if (points < 2){emoji = ' 😱'} 
@@ -131,7 +136,9 @@
 			    + ', ' 
 			    + properties.points 
 			    + ' points </b>' 
+			    + '<div id=flag>'
 			    + url
+			    + '</div>'
 			    + notes 
 			    + '</p>')
 	        .openOn(map);
