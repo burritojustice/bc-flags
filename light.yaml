@@ -1,0 +1,107 @@
+global:
+    bbox_bc: https://xyz.api.here.com/hub/spaces/EDwssu42/bbox?west=-139.061110259&south=48.22455359&east=-114.05382241&north=60.0020482135
+    bbox_studio:
+        https://xyz.api.here.com/hub/spaces/niaLjvic/bbox?west=-139.061110259&south=48.22455359&east=-114.05382241&north=60.0020482135
+    point_size: [[5,20px],[10,30px],[20,200px]]
+
+import:
+    - https://www.nextzen.org/carto/refill-style/refill-style.zip
+    - https://www.nextzen.org/carto/refill-style/themes/color-gray-gold.zip
+    - https://s3.amazonaws.com/xyz-demo/data/demo.yaml
+    - https://www.nextzen.org/carto/refill-style/themes/terrain-shading.zip
+    # - https://www.nextzen.org/carto/refill-style/themes/terrain-shading-dark.zip
+    
+sources:
+    # mapzen:
+    #     type: MVT
+    #     url: https://xyz.api.here.com/tiles/osmbase/256/all/{z}/{x}/{y}.mvt
+    _xyzspace:
+        url: global.bbox_studio
+        # url: https://xyz.api.here.com/hub/spaces/niaLjvic/tile/web/{z}_{x}_{y}
+        type: GeoJSON
+        url_params: 
+            access_token: AeE9KOkDbjkbmUv8bpM8ZC4      
+    _bc:
+        url: https://xyz.api.here.com/hub/spaces/LdmvFlzZ/search
+        type: GeoJSON
+        url_params:
+            access_token: AVoxWfIDYgZOr4zOaUV3urg
+            tags: british_columbia
+styles:
+    _points:
+        base: points
+        blend: overlay
+        blend_order: 10
+    _text:
+        base: text
+        blend: overlay
+        blend_order: 21
+
+layers:
+    _xyz_dots:
+        # enabled: false
+        filter:
+            all:
+                - $geometry: point
+                - centroid: false
+
+        data: {source: _xyzspace}
+        dots:
+            filter: {$zoom: {min: 10}}
+            # enabled: false
+            draw:
+                _points:
+                    collide: false
+                    color: [1,1,1,0.0]
+                    size: global.point_size
+                    text:
+                        collide: false
+                        # text_source: points
+                        text_source: |
+                            function(){
+                                if ($zoom > 11){
+                                    return feature.municipality + "\n" + feature.points 
+                                    } else {return feature.points}
+                                }
+                            
+                        font:
+                            fill: lightblue
+                            size: 12px
+                            stroke:
+                                color: black
+                                width: 2px
+                        
+        emoji:
+            # enabled: false
+            draw:
+                _text:
+                    interactive: true
+                    collide: false
+                    repeat_distance: 0
+                    text_source: |
+                        function(){
+                            if (feature.points < 2){return '😱'}
+                            if (feature.points < 3){return '😳'}
+                            if (feature.points < 4){return '😬'}
+                            if (feature.points < 5){return '😐'}
+                            if (feature.points < 6){return '🙂'}
+                            if (feature.points < 7){return '😃'}
+                            if (feature.points < 7.7){return '😍'}
+                            if (feature.points < 9){return '😎'}
+                            }
+                    font:
+                        fill: black
+                        # size: 20px
+                        size: global.point_size
+    _bc:
+        data: {source: _bc}
+        filter: {$zoom: {min: 8}}
+        country:
+            draw:
+                country-outerline:
+                    style: lines
+                    order: 100
+                    # order: function() { return (feature.sort_rank -1); }
+                    color: global.light_color
+                    width: [[0, 0px], [4, 2px], [8, 5px], [14, 7px], [17, 14m]]
+
