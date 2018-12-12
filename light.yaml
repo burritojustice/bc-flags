@@ -6,7 +6,7 @@ global:
 
 import:
     - https://www.nextzen.org/carto/refill-style/refill-style.zip
-    - https://www.nextzen.org/carto/refill-style/themes/color-gray-gold.zip
+    # - https://www.nextzen.org/carto/refill-style/themes/color-gray-gold.zip
     - https://s3.amazonaws.com/xyz-demo/data/demo.yaml
     - https://www.nextzen.org/carto/refill-style/themes/terrain-shading.zip
     # - https://www.nextzen.org/carto/refill-style/themes/terrain-shading-dark.zip
