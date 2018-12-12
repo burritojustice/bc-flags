@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Municipal Flags of British Columbia, Ranked</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
+	
+	<style>		html, body {
+		    margin: 0;
+		    border: 0;
+		    font-family: 'Fira Sans', sans-serif;
+		    font-size: 14px;
+		}
+		
+	#map {
+	    height: 100%;
+	    width: 100%;
+		    position: absolute; 
+
+	}
+	#flag {
+/* 		height: 300px; */
+		width: auto;
+	}
+
+        #label {
+            text-align: center;
+            top: 0%;
+            height: 20%;
+            width: 40%;
+            left: 30%;
+            position: absolute;
+            margin: 0 auto;
+            z-index: 1000;
+            opacity: 0.8;
+            background-color: white;
+            font: 18px 'Fira Sans', sans-serif;
+            text-shadow: 2px 2px #FFFFFF;
+            display: table;
+            padding: 10px;
+            border-radius: 15px; 
+        }
+        #text{
+/*             display: table-cell; */
+            vertical-align: middle;
+            text-align: center;
+        }
+        #small{
+            font-size:12px;
+        }
+        
+	</style>
+</head>
+<body>
+<div id="map">
+</div>
+<div id="label" style="text-align: center; color: red">
+	<p id="text">A MAP OF THE MUNICIPAL FLAGS OF BRITISH COLUMBIA 
+	<br>as ranked by <a href='https://threadreaderapp.com/thread/1066885174112047104.html' target = '_blank'>@j_mcelroy</a> 
+	<br><br><i>BUT WITH EMOJI</i>
+	<br> 😱 😳 😬 🤔 🙂 😃 😍 😎 
+	<p id='small'> click or hover to see the flag (via <a href="https://fotw.info/flags/ca-bc-.html" target = '_blank'>FOTW</a>) and notes<br>
+	<a href="https://github.com/burritojustice/bc-flags/blob/master/README.md" target = '_blank'>@burritojustice</a> made this map using <a href="https://github.com/tangrams/tangram" target = '_blank'>Tangram</a> + <a href="https://www.nextzen.org/" target = '_blank'>Nextzen</a> + <a href="https://pelias.io/" target="_blank">Pelias</a> + <a href="http://explore.xyz.here.com" target = '_blank'>HERE XYZ</a>
+	</p>
+</div>
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js">
+</script>
+<!-- Main tangram library -->
+<script src="https://unpkg.com/tangram/dist/tangram.min.js">
+</script>
+<script src="leaflet-hash.js">
+</script>
+<script>
+  var map = L.map('map', {boxZoom: false});
+    var hash = new L.Hash(map);
+    var popup = L.popup();
+    var layer = Tangram.leafletLayer({
+        scene: 'light.yaml',
+        attribution: '<a href="https://github.com/burritojustice/bc-flags/blob/master/README.md" target = "_blank">about</a> | <a href="https://github.com/tangrams/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="openaddresses.io">OpenAddresses</a> | <a href="https://threadreaderapp.com/thread/1066885174112047104.html">@j_mcelroy</a> | <a href="https://fotw.info/flags/ca-bc-.html">FOTW</a> | <a href="https://nextzen.org/" target="_blank">Nextzen</a> |  <a href="https://explore.xyz.here.com/">HERE XYZ</a>',
+        events: {
+          click: function(selection) {
+            if (selection.feature) {
+              var properties = (selection.feature.properties)
+              showPopup(selection.leaflet_event.latlng, properties);
+            } else {
+              map.closePopup();
+            }
+          },
+          hover: function(selection) {
+            if (selection.feature) {
+              var properties = (selection.feature.properties)
+              showPopup(selection.leaflet_event.latlng, properties);
+            } else {
+              map.closePopup();
+            }
+	  }
+        }
+      });   
+	
+	layer.addTo(map);
+	map.setView([53.903,-123.389], 6);
+	map.zoomControl.setPosition('bottomright')
+	    
+	    
+	function showPopup(latlng, properties) {
+	    var notes = properties.notes
+	    notes = notes.replace(/-/g,"<li>")
+	    notes = '<ul>' + notes + '</ul>'
+            var url = properties.url
+	    url = '<img src = ' + url + ' width=100% >'
+	    var points = properties.points
+	    var emoji
+	    if (points < 2){emoji = ' 😱'} 
+	    else if (points < 3){emoji = ' 😳'}
+	    else if (points < 4){emoji = ' 😬'}
+	    else if (points < 5){emoji = ' 🤔'}
+	    else if (points < 6){emoji = ' 🙂'}
+	    else if (points < 7){emoji = ' 😃'}
+	    else if (points < 7.89){emoji = ' 😍'}
+	    else if (points < 9){emoji = ' 😎'}
+	    console.log(notes,url)
+	    
+	    popup
+	        .setLatLng(latlng)
+	        .setContent('<p><table><tr>' 
+			    + '<td><emoji style="font-size: 40px;vertical-align: middle;">' 
+			    + emoji 
+			    + '</emoji></td><td><b><city style="font-size: 25px;vertical-align: middle;">'
+			    + properties.municipality  
+			    + '</city></b></td></tr></table>'
+			    + '<b>#' 
+			    + properties.rank 
+			    + ', ' 
+			    + properties.points 
+			    + ' points </b>' 
+			    + '<div id=flag>'
+			    + url
+			    + '</div>'
+			    + notes 
+			    + '</p>')
+	        .openOn(map);
+		
+	}
+        map.on('zoom', function(e) {
+            document.getElementById("label").style.visibility = "hidden"
+        })
+        map.on('move', function(e) {
+            document.getElementById("label").style.visibility = "hidden"
+        })
+        map.on('click', function(e) {
+            document.getElementById("label").style.visibility = "hidden"
+        })
+        map.on('hover', function(e) {
+            document.getElementById("label").style.visibility = "hidden"
+        })
+        
+        
+	
+</script>
+</body>
+</html>
