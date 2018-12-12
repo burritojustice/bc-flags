@@ -19,7 +19,7 @@ mapmoji table:
 
 - The map works on mobile, just tap on the emoji, but is more fun on a bigger screen with hover. 
 - the popups are a little wonky if the icon is at the very top of the screen - sorry, the popup doesn't know how big the image will be and I am am bad at CSS. SOLUTION: scroll down and then over or click.
-- Sorry if your OS doesn't have all these emoji, this map _cutting-edge_.
+- Sorry if your OS doesn't have all these emoji, this map _cutting-edge_. try this version of the map with a light background if you're on Windows 7 https://burritojustice.github.io/bc-flags/light.html 
 
 # How did I make this map?
 
