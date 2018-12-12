@@ -65,10 +65,10 @@ layers:
                                 }
                             
                         font:
-                            fill: lightblue
+                            fill: red
                             size: 12px
                             stroke:
-                                color: black
+                                color: white
                                 width: 2px
                         
         emoji:
