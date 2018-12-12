@@ -33,6 +33,7 @@ mapmoji table:
 # Notes:
 - Oak Bay [was robbed](https://twitter.com/burritojustice/status/1068339114070597634). 
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/j_mcelroy?ref_src=twsrc%5Etfw">@j_mcelroy</a> I mean come on top 30 at least look at the jaunty blue stripe <a href="https://t.co/N1FOuaLgco">https://t.co/N1FOuaLgco</a> <a href="https://t.co/px5HNGd4Yo">pic.twitter.com/px5HNGd4Yo</a></p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/j_mcelroy?ref_src=twsrc%5Etfw">@j_mcelroy</a> I mean come on top 30 at least look at the jaunty blue stripe <a href="https://t.co/N1FOuaLgco">https://t.co/N1FOuaLgco</a> <a href="https://t.co/px5HNGd4Yo">pic.twitter.com/px5HNGd4Yo</a></p> </blockquote>
+
 ![oak bay flag](https://pbs.twimg.com/media/DtOAwl_U0AAvwRB.jpg)
-  </blockquote>
+ 
