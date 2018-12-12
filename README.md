@@ -24,10 +24,10 @@ mapmoji table:
 # How did I make this map?
 
 - a great deal of regexing and strategic deleting turned the html of Justin's thread into a CSV
-- I geocoded the CSV using the [batch geocoder](https://github.com/pelias/scripts-batch-search) from [Pelias](http://pelias.io). 
+- I geocoded the CSV using the [batch geocoder](https://github.com/pelias/scripts-batch-search) from [geocode.earth](https://geocode.earth) / [Pelias](http://pelias.io). 
 - I uploaded the CSV to [HERE XYZ](https://explore.xyz.here.com/) using [XYZ Studio](https://xyz.here.com/studio/).
 - I used the table editor in XYZ Studio to fix a bunch of notes and data I regexed a little too hard
-- I used XYZ Studio's map edit feature to nudge some of the points to better locations (because centroids of large municipalities are often not quite where the town is). 
+- I used XYZ Studio's map edit feature to nudge some of the points to better locations (because centroids of large municipalities are often not quite where the towns are). 
 - I made the map in [Tangram Play](https://tangram.city/play/?scene=https://raw.githubusercontent.com/burritojustice/bc-flags/master/scene.yaml#10.9898/48.5373/-123.4756), pulling the points in from the HERE XYZ API and using conditional formatting to convert scores to emoji. I displayed the map with [tangram.js](https://github.com/tangrams/tangram) top of a Refill basemap from [Nextzen](https://nextzen.org/).
 
 # Notes:
